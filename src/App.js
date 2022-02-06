@@ -1,8 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
 import web3 from "./web3";
-import { version } from "react-dom";
 import lottery from "./lottery";
 
 class App extends React.Component {
@@ -34,7 +32,7 @@ class App extends React.Component {
     // get the list of the accounts
     const accounts = await web3.eth.getAccounts();
 
-    this.setState({message: 'Wating on trasation success...'});
+    this.setState({message: 'Wating on trasaction success...'});
 
     await lottery.methods.enter().send({
       from: accounts[0],
@@ -48,7 +46,7 @@ class App extends React.Component {
   onClick = async () => {
     const accounts = await web3.eth.getAccounts();
 
-    this.setState({message: 'Wating on trasation success...'})
+    this.setState({message: 'Wating on trasaction success...'})
 
     await lottery.methods.pickWinner().send({
       from: accounts[0]
